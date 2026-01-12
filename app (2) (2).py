@@ -1,7 +1,6 @@
 # =========================================
 # MULTI-SUBJECT REPORT COMMENT GENERATOR - Secure Streamlit Version
 # Supports Year 5, 7 & 8; Subjects: English, Maths, Science
-# NOW WITH VARIANT SUPPORT for avoiding duplicate comments
 # =========================================
 
 import streamlit as st
@@ -72,8 +71,6 @@ if 'app_initialized' not in st.session_state:
         st.session_state.form_data = {}
     if 'all_comments' not in st.session_state:
         st.session_state.all_comments = []
-    if 'variant_tracker' not in st.session_state:
-        st.session_state.variant_tracker = {}
 
 # ========== HELPER FUNCTIONS ==========
 def apply_british_spelling(text):
@@ -214,8 +211,8 @@ def fix_pronouns_in_text(text, pronoun, possessive):
 
 # ========== IMPORT STATEMENTS ==========
 try:
-    # Year 5 English - Variant 1
-    from statements_year5_English_variant1 import (
+    # Year 5 English
+    from statements_year5_English import (
         opening_phrases as opening_5_eng,
         attitude_bank as attitude_5_eng,
         reading_bank as reading_5_eng,
@@ -225,19 +222,8 @@ try:
         closer_bank as closer_5_eng
     )
     
-    # Year 5 English - Variant 2
-    from statements_year5_English_variant2 import (
-        opening_phrases as opening_5_eng_v2,
-        attitude_bank as attitude_5_eng_v2,
-        reading_bank as reading_5_eng_v2,
-        writing_bank as writing_5_eng_v2,
-        reading_target_bank as target_5_eng_v2,
-        writing_target_bank as target_write_5_eng_v2,
-        closer_bank as closer_5_eng_v2
-    )
-    
-    # Year 5 Maths - Variant 1
-    from statements_year5_Maths_variant1 import (
+    # Year 5 Maths
+    from statements_year5_Maths import (
         opening_phrases as opening_5_maths,
         attitude_bank as attitude_5_maths,
         number_bank as number_5_maths,
@@ -246,18 +232,8 @@ try:
         closer_bank as closer_5_maths
     )
     
-    # Year 5 Maths - Variant 2
-    from statements_year5_Maths_variant2 import (
-        opening_phrases as opening_5_maths_v2,
-        attitude_bank as attitude_5_maths_v2,
-        number_bank as number_5_maths_v2,
-        problem_solving_bank as problem_5_maths_v2,
-        target_bank as target_5_maths_v2,
-        closer_bank as closer_5_maths_v2
-    )
-    
-    # Year 5 Science - Variant 1
-    from statements_year5_Science_variant1 import (
+    # Year 5 Science
+    from statements_year5_Science import (
         opening_phrases as opening_5_sci,
         attitude_bank as attitude_5_sci,
         science_bank as science_5_sci,
@@ -265,17 +241,8 @@ try:
         closer_bank as closer_5_sci
     )
     
-    # Year 5 Science - Variant 2
-    from statements_year5_Science_variant2 import (
-        opening_phrases as opening_5_sci_v2,
-        attitude_bank as attitude_5_sci_v2,
-        science_bank as science_5_sci_v2,
-        target_bank as target_5_sci_v2,
-        closer_bank as closer_5_sci_v2
-    )
-    
-    # Year 7 English - Variant 1
-    from statements_year7_English_variant1 import (
+    # Year 7 English
+    from statements_year7_English import (
         opening_phrases as opening_7_eng,
         attitude_bank as attitude_7_eng,
         reading_bank as reading_7_eng,
@@ -285,19 +252,8 @@ try:
         closer_bank as closer_7_eng
     )
     
-    # Year 7 English - Variant 2
-    from statements_year7_English_variant2 import (
-        opening_phrases as opening_7_eng_v2,
-        attitude_bank as attitude_7_eng_v2,
-        reading_bank as reading_7_eng_v2,
-        writing_bank as writing_7_eng_v2,
-        reading_target_bank as target_7_eng_v2,
-        writing_target_bank as target_write_7_eng_v2,
-        closer_bank as closer_7_eng_v2
-    )
-    
-    # Year 7 Maths - Variant 1
-    from statements_year7_Maths_variant1 import (
+    # Year 7 Maths
+    from statements_year7_Maths import (
         opening_phrases as opening_7_maths,
         attitude_bank as attitude_7_maths,
         number_and_algebra_bank as number_7_maths,
@@ -307,19 +263,8 @@ try:
         closer_bank as closer_7_maths
     )
     
-    # Year 7 Maths - Variant 2
-    from statements_year7_Maths_variant2 import (
-        opening_phrases as opening_7_maths_v2,
-        attitude_bank as attitude_7_maths_v2,
-        number_and_algebra_bank as number_7_maths_v2,
-        geometry_and_measurement_bank as geometry_7_maths_v2,
-        problem_solving_and_reasoning_bank as problem_7_maths_v2,
-        target_bank as target_7_maths_v2,
-        closer_bank as closer_7_maths_v2
-    )
-    
-    # Year 7 Science - Variant 1
-    from statements_year7_science_variant1 import (
+    # Year 7 Science
+    from statements_year7_science import (
         opening_phrases as opening_7_sci,
         attitude_bank as attitude_7_sci,
         science_bank as science_7_sci,
@@ -327,17 +272,8 @@ try:
         closer_bank as closer_7_sci
     )
     
-    # Year 7 Science - Variant 2
-    from statements_year7_science_variant2 import (
-        opening_phrases as opening_7_sci_v2,
-        attitude_bank as attitude_7_sci_v2,
-        science_bank as science_7_sci_v2,
-        target_bank as target_7_sci_v2,
-        closer_bank as closer_7_sci_v2
-    )
-    
-    # Year 8 English - Variant 1
-    from statements_year8_English_variant1 import (
+    # Year 8 English
+    from statements_year8_English import (
         opening_phrases as opening_8_eng,
         attitude_bank as attitude_8_eng,
         reading_bank as reading_8_eng,
@@ -347,19 +283,8 @@ try:
         closer_bank as closer_8_eng
     )
     
-    # Year 8 English - Variant 2
-    from statements_year8_English_variant2 import (
-        opening_phrases as opening_8_eng_v2,
-        attitude_bank as attitude_8_eng_v2,
-        reading_bank as reading_8_eng_v2,
-        writing_bank as writing_8_eng_v2,
-        reading_target_bank as target_8_eng_v2,
-        writing_target_bank as target_write_8_eng_v2,
-        closer_bank as closer_8_eng_v2
-    )
-    
-    # Year 8 Maths - Variant 1
-    from statements_year8_Maths_variant1 import (
+    # Year 8 Maths
+    from statements_year8_Maths import (
         opening_phrases as opening_8_maths,
         attitude_bank as attitude_8_maths,
         maths_bank as maths_8_maths,
@@ -367,31 +292,13 @@ try:
         closer_bank as closer_8_maths
     )
     
-    # Year 8 Maths - Variant 2
-    from statements_year8_Maths_variant2 import (
-        opening_phrases as opening_8_maths_v2,
-        attitude_bank as attitude_8_maths_v2,
-        maths_bank as maths_8_maths_v2,
-        target_bank as target_8_maths_v2,
-        closer_bank as closer_8_maths_v2
-    )
-    
-    # Year 8 Science - Variant 1
-    from statements_year8_science_variant1 import (
+    # Year 8 Science
+    from statements_year8_science import (
         opening_phrases as opening_8_sci,
         attitude_bank as attitude_8_sci,
         science_bank as science_8_sci,
         target_bank as target_8_sci,
         closer_bank as closer_8_sci
-    )
-    
-    # Year 8 Science - Variant 2
-    from statements_year8_science_variant2 import (
-        opening_phrases as opening_8_sci_v2,
-        attitude_bank as attitude_8_sci_v2,
-        science_bank as science_8_sci_v2,
-        target_bank as target_8_sci_v2,
-        closer_bank as closer_8_sci_v2
     )
     
 except ImportError as e:
@@ -400,106 +307,68 @@ except ImportError as e:
     st.stop()
 
 # ========== COMMENT GENERATOR FUNCTIONS ==========
-def get_statement_banks(subject, year, variant=0):
+def get_statement_banks(subject, year):
     """
-    Get statement banks based on subject, year, and variant.
-    variant: 0 = variant1, 1 = variant2
+    Get statement banks based on subject and year.
     """
     
     # Year 5 English
     if year == 5 and subject == "English":
-        if variant == 1:
-            return (opening_5_eng_v2, attitude_5_eng_v2, reading_5_eng_v2, writing_5_eng_v2,
-                   target_5_eng_v2, target_write_5_eng_v2, closer_5_eng_v2)
-        else:
-            return (opening_5_eng, attitude_5_eng, reading_5_eng, writing_5_eng,
-                   target_5_eng, target_write_5_eng, closer_5_eng)
+        return (opening_5_eng, attitude_5_eng, reading_5_eng, writing_5_eng,
+               target_5_eng, target_write_5_eng, closer_5_eng)
     
     # Year 5 Maths
     elif year == 5 and subject == "Maths":
-        if variant == 1:
-            return (opening_5_maths_v2, attitude_5_maths_v2, number_5_maths_v2, None,
-                   target_5_maths_v2, None, closer_5_maths_v2)
-        else:
-            return (opening_5_maths, attitude_5_maths, number_5_maths, None,
-                   target_5_maths, None, closer_5_maths)
+        return (opening_5_maths, attitude_5_maths, number_5_maths, None,
+               target_5_maths, None, closer_5_maths)
     
     # Year 5 Science
     elif year == 5 and subject == "Science":
-        if variant == 1:
-            return (opening_5_sci_v2, attitude_5_sci_v2, science_5_sci_v2, None,
-                   target_5_sci_v2, None, closer_5_sci_v2)
-        else:
-            return (opening_5_sci, attitude_5_sci, science_5_sci, None,
-                   target_5_sci, None, closer_5_sci)
+        return (opening_5_sci, attitude_5_sci, science_5_sci, None,
+               target_5_sci, None, closer_5_sci)
     
     # Year 7 English
     elif year == 7 and subject == "English":
-        if variant == 1:
-            return (opening_7_eng_v2, attitude_7_eng_v2, reading_7_eng_v2, writing_7_eng_v2,
-                   target_7_eng_v2, target_write_7_eng_v2, closer_7_eng_v2)
-        else:
-            return (opening_7_eng, attitude_7_eng, reading_7_eng, writing_7_eng,
-                   target_7_eng, target_write_7_eng, closer_7_eng)
+        return (opening_7_eng, attitude_7_eng, reading_7_eng, writing_7_eng,
+               target_7_eng, target_write_7_eng, closer_7_eng)
     
     # Year 7 Maths
     elif year == 7 and subject == "Maths":
-        if variant == 1:
-            return (opening_7_maths_v2, attitude_7_maths_v2, number_7_maths_v2, None,
-                   target_7_maths_v2, None, closer_7_maths_v2)
-        else:
-            return (opening_7_maths, attitude_7_maths, number_7_maths, None,
-                   target_7_maths, None, closer_7_maths)
+        return (opening_7_maths, attitude_7_maths, number_7_maths, None,
+               target_7_maths, None, closer_7_maths)
     
     # Year 7 Science
     elif year == 7 and subject == "Science":
-        if variant == 1:
-            return (opening_7_sci_v2, attitude_7_sci_v2, science_7_sci_v2, None,
-                   target_7_sci_v2, None, closer_7_sci_v2)
-        else:
-            return (opening_7_sci, attitude_7_sci, science_7_sci, None,
-                   target_7_sci, None, closer_7_sci)
+        return (opening_7_sci, attitude_7_sci, science_7_sci, None,
+               target_7_sci, None, closer_7_sci)
     
     # Year 8 English
     elif year == 8 and subject == "English":
-        if variant == 1:
-            return (opening_8_eng_v2, attitude_8_eng_v2, reading_8_eng_v2, writing_8_eng_v2,
-                   target_8_eng_v2, target_write_8_eng_v2, closer_8_eng_v2)
-        else:
-            return (opening_8_eng, attitude_8_eng, reading_8_eng, writing_8_eng,
-                   target_8_eng, target_write_8_eng, closer_8_eng)
+        return (opening_8_eng, attitude_8_eng, reading_8_eng, writing_8_eng,
+               target_8_eng, target_write_8_eng, closer_8_eng)
     
     # Year 8 Maths
     elif year == 8 and subject == "Maths":
-        if variant == 1:
-            return (opening_8_maths_v2, attitude_8_maths_v2, maths_8_maths_v2, None,
-                   target_8_maths_v2, None, closer_8_maths_v2)
-        else:
-            return (opening_8_maths, attitude_8_maths, maths_8_maths, None,
-                   target_8_maths, None, closer_8_maths)
+        return (opening_8_maths, attitude_8_maths, maths_8_maths, None,
+               target_8_maths, None, closer_8_maths)
     
     # Year 8 Science
     elif year == 8 and subject == "Science":
-        if variant == 1:
-            return (opening_8_sci_v2, attitude_8_sci_v2, science_8_sci_v2, None,
-                   target_8_sci_v2, None, closer_8_sci_v2)
-        else:
-            return (opening_8_sci, attitude_8_sci, science_8_sci, None,
-                   target_8_sci, None, closer_8_sci)
+        return (opening_8_sci, attitude_8_sci, science_8_sci, None,
+               target_8_sci, None, closer_8_sci)
     
     # Default fallback
     return None
 
-def generate_comment(subject, year, name, gender, att, achieve, target, attitude_target="", variant=0):
+def generate_comment(subject, year, name, gender, att, achieve, target, attitude_target=""):
     """
-    Generate report comment with optional variant support.
-    variant: 0 = variant1, 1 = variant2
+    Generate report comment.
     """
     p, p_poss = get_pronouns(gender)
     name = sanitize_input(name)
     
     # Get appropriate statement banks
-    banks = get_statement_banks(subject, year, variant)
+    banks = get_statement_banks(subject, year)
     if not banks:
         return "Error: Statement banks not found"
     
@@ -628,31 +497,6 @@ def generate_comment(subject, year, name, gender, att, achieve, target, attitude
     
     return comment
 
-def get_available_variants(subject, year):
-    """Check which variants are available for a given subject/year"""
-    available = [0]  # 0 = variant1 always available
-    
-    if year == 5 and subject == "English":
-        if opening_5_eng_v2: available.append(1)
-    elif year == 5 and subject == "Maths":
-        if opening_5_maths_v2: available.append(1)
-    elif year == 5 and subject == "Science":
-        if opening_5_sci_v2: available.append(1)
-    elif year == 7 and subject == "English":
-        if opening_7_eng_v2: available.append(1)
-    elif year == 7 and subject == "Maths":
-        if opening_7_maths_v2: available.append(1)
-    elif year == 7 and subject == "Science":
-        if opening_7_sci_v2: available.append(1)
-    elif year == 8 and subject == "English":
-        if opening_8_eng_v2: available.append(1)
-    elif year == 8 and subject == "Maths":
-        if opening_8_maths_v2: available.append(1)
-    elif year == 8 and subject == "Science":
-        if opening_8_sci_v2: available.append(1)
-    
-    return available
-
 # ========== STREAMLIT APP LAYOUT ==========
 
 # Sidebar
@@ -681,12 +525,11 @@ with st.sidebar:
         st.session_state.last_upload_time = datetime.now()
         st.session_state.form_data = {}
         st.session_state.all_comments = []
-        st.session_state.variant_tracker = {}
         st.success("All data cleared!")
         st.rerun()
     
     st.markdown("---")
-    st.caption("v3.1 • With Variant Support")
+    st.caption("v3.0")
 
 # Main content
 col1, col2 = st.columns([1, 4])
@@ -700,7 +543,7 @@ with col1:
 
 with col2:
     st.title("Multi-Subject Report Comment Generator")
-    st.caption("~499 characters • Years 5, 7 & 8 • English, Maths, Science • Now with Variants!")
+    st.caption("~499 characters • Years 5, 7 & 8 • English, Maths, Science")
 
 st.warning("""
 **PRIVACY NOTICE:** All data is processed in memory only. No files are stored on our servers. 
@@ -793,7 +636,7 @@ if app_mode == "Single Student":
             'attitude_target': attitude_target
         }
         
-        # Generate original comment (variant 0)
+        # Generate comment
         with st.spinner("Generating comment..."):
             comment = generate_comment(
                 subject=subject,
@@ -803,14 +646,11 @@ if app_mode == "Single Student":
                 att=att,
                 achieve=achieve,
                 target=target,
-                attitude_target=attitude_target,
-                variant=0  # Original variant
+                attitude_target=attitude_target
             )
             
             # Store in session state
             st.session_state.current_comment = comment
-            st.session_state.current_variant = None
-            st.session_state.show_variant = False
             st.session_state.progress = 2
     
     # Show generated comment if it exists
@@ -819,31 +659,23 @@ if app_mode == "Single Student":
         
         st.subheader("Generated Comment")
         
-        # Determine which comment to show
-        if st.session_state.get('show_variant', False) and st.session_state.get('current_variant'):
-            display_comment = st.session_state.current_variant
-            comment_source = "Variant Comment"
-        else:
-            display_comment = st.session_state.current_comment
-            comment_source = "Original Comment"
-        
         # Display comment
         col_comment, col_copy = st.columns([4, 1])
         with col_comment:
-            st.text_area(comment_source, display_comment, height=200, key="comment_display")
+            st.text_area("Generated Comment", st.session_state.current_comment, height=200, key="comment_display")
         with col_copy:
             st.markdown("<br>", unsafe_allow_html=True)
             if st.button("Copy", use_container_width=True, help="Copy comment to clipboard"):
-                st.code(display_comment, language=None)
+                st.code(st.session_state.current_comment, language=None)
                 st.success("Ready to copy!")
         
         # Statistics
-        char_count = len(display_comment)
+        char_count = len(st.session_state.current_comment)
         col_stats = st.columns(3)
         with col_stats[0]:
             st.metric("Character Count", f"{char_count}/{TARGET_CHARS}")
         with col_stats[1]:
-            st.metric("Words", len(display_comment.split()))
+            st.metric("Words", len(st.session_state.current_comment.split()))
         with col_stats[2]:
             if char_count < TARGET_CHARS - 50:
                 st.success("Perfect length")
@@ -855,9 +687,8 @@ if app_mode == "Single Student":
             'name': form_data.get('name', 'Student'),
             'subject': form_data.get('subject', 'English'),
             'year': form_data.get('year', 7),
-            'comment': display_comment,
-            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M"),
-            'variant': 'Variant' if st.session_state.get('show_variant', False) else 'Original'
+            'comment': st.session_state.current_comment,
+            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M")
         }
         
         # Check if this exact comment is already in the list
@@ -877,32 +708,10 @@ if app_mode == "Single Student":
         col_actions = st.columns([2, 1, 1])
         
         with col_actions[1]:
-            if st.button("Generate Variant", type="secondary", use_container_width=True):
-                # Get current form data
+            if st.button("Generate Another", type="secondary", use_container_width=True):
+                # Generate a new comment with different random selection
                 form_data = st.session_state.form_data
-                
-                # Get available variants
-                available_variants = get_available_variants(form_data['subject'], form_data['year'])
-                
-                # Create a unique key for this student
-                student_key = f"{form_data['name']}_{form_data['subject']}_{form_data['year']}"
-                
-                # Initialize variant tracker for this student if not exists
-                if student_key not in st.session_state.variant_tracker:
-                    st.session_state.variant_tracker[student_key] = {
-                        'variant_count': 0,
-                        'last_comment': '',
-                        'last_variant_num': 0
-                    }
-                
-                # Get the tracker for this student
-                tracker = st.session_state.variant_tracker[student_key]
-                
-                # Use variant 1 (Variant 2 files) for variant generation
-                variant_num = 1 if 1 in available_variants else 0
-                
-                # Generate variant comment with a new random seed
-                comment_variant = generate_comment(
+                comment = generate_comment(
                     subject=form_data['subject'],
                     year=form_data['year'],
                     name=form_data['name'],
@@ -910,49 +719,15 @@ if app_mode == "Single Student":
                     att=form_data['att'],
                     achieve=form_data['achieve'],
                     target=form_data['target'],
-                    attitude_target=form_data.get('attitude_target', ''),
-                    variant=variant_num
+                    attitude_target=form_data.get('attitude_target', '')
                 )
-                
-                # Check if this is the same as the last variant comment
-                attempt = 0
-                while comment_variant == tracker.get('last_comment', '') and attempt < 3:
-                    attempt += 1
-                    # If same, try to generate again with different random seed
-                    random.seed(time.time() + attempt * 1000)  # Use current time as seed
-                    comment_variant = generate_comment(
-                        subject=form_data['subject'],
-                        year=form_data['year'],
-                        name=form_data['name'],
-                        gender=form_data['gender'],
-                        att=form_data['att'],
-                        achieve=form_data['achieve'],
-                        target=form_data['target'],
-                        attitude_target=form_data.get('attitude_target', ''),
-                        variant=variant_num
-                    )
-                
-                # Store variant
-                st.session_state.current_variant = comment_variant
-                st.session_state.show_variant = True
-                st.session_state.variant_num = variant_num
-                
-                # Update tracker
-                tracker['variant_count'] += 1
-                tracker['last_comment'] = comment_variant
-                tracker['last_variant_num'] = variant_num
-                
-                # Show success message
-                variant_label = "Variant 1" if variant_num == 0 else "Variant 2"
-                st.success(f"{variant_label} generated with different wording!")
+                st.session_state.current_comment = comment
                 st.rerun()
         
         with col_actions[2]:
             if st.button("Add Another Student", type="primary", use_container_width=True):
                 # Clear current comments but keep form data
                 st.session_state.current_comment = ""
-                st.session_state.current_variant = ""
-                st.session_state.show_variant = False
                 st.session_state.progress = 1
                 st.rerun()
 
@@ -1098,8 +873,7 @@ if 'all_comments' in st.session_state and st.session_state.all_comments:
     
     with st.expander(f"Preview All Comments ({total_comments})"):
         for idx, entry in enumerate(st.session_state.all_comments, 1):
-            variant_label = f" ({entry.get('variant', '')})" if 'variant' in entry else ''
-            st.markdown(f"**{idx}. {entry['name']}** ({entry['subject']} Year {entry['year']}){variant_label}")
+            st.markdown(f"**{idx}. {entry['name']}** ({entry['subject']} Year {entry['year']})")
             st.write(entry['comment'])
             st.markdown("---")
     
@@ -1161,9 +935,6 @@ if 'all_comments' in st.session_state and st.session_state.all_comments:
             st.session_state.all_comments = []
             st.session_state.form_data = {}
             st.session_state.current_comment = ""
-            st.session_state.current_variant = ""
-            st.session_state.show_variant = False
-            st.session_state.variant_tracker = {}
             st.session_state.progress = 1
             st.success("All comments cleared! Ready for new entries.")
             st.rerun()
@@ -1172,7 +943,7 @@ if 'all_comments' in st.session_state and st.session_state.all_comments:
 st.markdown("---")
 footer_cols = st.columns([2, 1])
 with footer_cols[0]:
-    st.caption("© Report Generator v3.1 • With Variant Support")
+    st.caption("© Report Generator v3.0")
 with footer_cols[1]:
     if st.button("Quick Help", use_container_width=True):
         st.info("""
@@ -1181,9 +952,9 @@ with footer_cols[1]:
         2. **Generate**: Create comments
         3. **Download**: Export reports
         
-        **New Feature:**
-        - Click "Generate Variant" for different wording
-        - Add variant statement files to enable this
+        **Note:**
+        - Click "Generate Another" for different wording
+        - 500 character limit per comment
         
         **Hotkeys:**
         - Tab: Move between fields
