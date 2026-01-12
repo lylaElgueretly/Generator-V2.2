@@ -108,6 +108,7 @@ def generate_comment(year, subject, name, teacher_text):
         teacher_text = teacher_text.strip()
         if not teacher_text.endswith("."):
             teacher_text += "."
+        # Append optional encouragement dynamically
         comment = f"{teacher_text} Keep it up."
     return comment
 
